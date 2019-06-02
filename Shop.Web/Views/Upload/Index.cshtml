@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Загрузка магазина";
+    Layout = "_Layout";
+}
+<h2>Загрузите файл .guns</h2>
+@using (Html.BeginForm("DoUpload",
+  "Upload",
+  FormMethod.Post,
+  new { enctype = "multipart/form-data" }))
+{
+    <label for="file">Загрузить файл:</label>
+    <input type="file" name="file" id="file" /><br><br>
+    <input type="submit" value="Отправить" />
+    <br><br>
+    @ViewBag.Message
+}

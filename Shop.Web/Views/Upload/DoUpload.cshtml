@@ -1,0 +1,35 @@
+﻿@model GunShop.Shop
+
+@{
+    ViewBag.Title = "Магазин " + Model.Name;
+    Layout = "_Layout";
+}
+
+<h2>Магазин @Model.Name</h2>
+<h3>Адрес @Model.Address</h3>
+<h4>Контакты @Model.Contacts</h4>
+<h5>Оружие</h5>
+
+<table class="table table-bordered table-responsive table-hover">
+    <thead>
+        <tr>
+            <td>Название товара</td>
+            <td>Дата изготовления</td>
+            <td>Вид оружия</td>
+            <td>Калибр</td>
+            <td>Цена</td>
+            <td>Вес</td>
+        </tr>
+    </thead>
+    @foreach(var guns in Model.Guns)
+    {
+        <tr>
+            <td>@guns.Name</td>
+            <td>@guns.ProductionDate</td>
+            <td>@guns.GunType</td>
+            <td>@guns.Caliber</td>
+            <td>@guns.Price</td>
+            <td>@guns.Weight</td>
+        </tr>
+    }
+</table>
